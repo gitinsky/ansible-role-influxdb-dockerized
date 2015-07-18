@@ -1,0 +1,15 @@
+---
+- name: make a build dir
+  file: state=directory name=/root/influxdb-dockerized
+
+- name: put Dockerfile
+  template: src=Dockerfile dest=/root/influxdb-dockerized/Dockerfile
+
+- name: put start.sh
+  template: src=start.sh dest=/root/influxdb-dockerized/start.sh mode=0755
+
+- name: build a Docker image for InfluxDB
+  command: docker build -t gitinsky/influxdb:0.1.0 --rm /root/influxdb-dockerized
+
+- name: tag it as latest
+  command: docker build -t gitinsky/influxdb:latest --rm /root/influxdb-dockerized

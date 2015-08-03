@@ -9,7 +9,7 @@
   template: src=start.sh dest=/root/influxdb-dockerized/start.sh mode=0755
 
 - name: build a Docker image for InfluxDB
-  command: docker build -t gitinsky/influxdb:0.1.0 --rm /root/influxdb-dockerized
+  command: docker build -t gitinsky/influxdb:0.1.1 --rm /root/influxdb-dockerized
 
 - name: tag it as latest
   command: docker build -t gitinsky/influxdb:latest --rm /root/influxdb-dockerized

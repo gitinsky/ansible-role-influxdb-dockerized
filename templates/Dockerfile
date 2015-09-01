@@ -3,7 +3,7 @@ MAINTAINER Git In Sky <support@gitinsky.com>
 
 RUN \
   cd / && \
-  curl -s -o /influxdb_latest_amd64.deb https://s3.amazonaws.com/influxdb/influxdb_0.9.3-rc1_amd64.deb && \
+  curl -s -o /influxdb_latest_amd64.deb https://s3.amazonaws.com/influxdb/influxdb_0.9.3_amd64.deb && \
   dpkg -i /influxdb_latest_amd64.deb && \
   mkdir /config && mkdir /data && \
   rm -f /influxdb_latest_amd64.deb
